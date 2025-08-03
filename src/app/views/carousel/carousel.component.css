@@ -1,0 +1,109 @@
+/* Corpo da página com fundo amigável */
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #ece9e6, #ffffff);
+    font-family: Arial, sans-serif;
+}
+
+/* Container do carrossel */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 1em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card central */
+mat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Imagem do filme */
+.slide {
+    width: 60vw; /* ocupa 60% da largura da tela */
+    max-width: 500px; /* limite máximo de largura */
+    height: auto;
+    max-height: 70vh; /* garante que não passe de 70% da altura da tela */
+    border-radius: 0.5em;
+    object-fit: contain; /* mantém a proporção sem cortar a imagem */
+    transition: transform 0.3s ease;
+}
+
+
+.slide:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo dos botões */
+.control {
+    border: none;
+    background-color: #1976d2;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.control:hover {
+    background-color: #0d47a1;
+}
+
+.prev {
+    order: -1;
+}
+
+.next {
+    order: 1;
+}
+
+/* Estilos para títulos e subtítulos */
+mat-card-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+mat-card-subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+mat-card-content p {
+    font-size: 1em;
+    color: #444;
+    margin: 5px 0;
+}
+
+/* Responsividade */
+@media screen and (max-width: 460px) {
+    .slide {
+        width: 80vw;
+    }
+
+    .carousel {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .control {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
